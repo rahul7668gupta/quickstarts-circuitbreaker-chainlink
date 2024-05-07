@@ -32,7 +32,7 @@ contract ExampleDataConsumerV3 is Ownable{
     /**
      * Network: Sepolia
      */
-    constructor(int _maxbalance, address _feedAddress, bool _emergencyPossible) {
+    constructor(int _maxbalance, address _feedAddress, bool _emergencyPossible) Ownable(msg.sender) {
         dataFeed = AggregatorV3Interface(_feedAddress);
         maxbalance = _maxbalance;
         counter = 0;
